@@ -4,3 +4,24 @@ $ export TZ=:/etc/localtime
 
 1: set TZ=:/etc/localtime
                 https://blog.packagecloud.io/eng/2017/02/21/set-environment-variable-save-thousands-of-system-calls/
+                
+2: mysql etf8 
+
+For the recent version of MySQL,
+
+default-character-set = utf8
+causes a problem. It's deprecated I think.
+
+As Justin Ball says in "Upgrade to MySQL 5.5.12 and now MySQL won’t start, you should:
+
+Remove that directive and you should be good.
+Then your configuration file ('/etc/my.cnf' for example) should look like that:
+[mysqld]
+collation-server = utf8_unicode_ci
+init-connect='SET NAMES utf8'
+character-set-server = utf8
+Restart MySQL.
+For making sure, your MySQL is UTF-8, run the following queries in your MySQL prompt:
+First query:
+
+ mysql> show variables like 'char%';
