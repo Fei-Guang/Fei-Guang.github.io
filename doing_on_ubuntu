@@ -46,7 +46,7 @@ $TOMCAT_HOME/conf/server.xml
 </Server>
 
 
-5:show the last queries executed on MySQL temporaly
+5:show the last queries executed on MySQL temproary
 
 If you prefer to output to a file:
 
