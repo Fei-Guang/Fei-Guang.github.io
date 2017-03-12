@@ -44,3 +44,15 @@ $TOMCAT_HOME/conf/server.xml
     </Engine>
   </Service>
 </Server>
+
+
+5:show the last queries executed on MySQL temporaly
+
+If you prefer to output to a file:
+
+SET GLOBAL log_output = "FILE"; which is set by default.
+#set absolute path will report error,mysql.log=/var/lib/mysql/mysql.log
+SET GLOBAL general_log_file = "mysql.log";
+SET GLOBAL general_log = 'ON';
+
+tail -f /var/lib/mysql/mysql.log
