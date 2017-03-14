@@ -56,3 +56,26 @@ SET GLOBAL general_log_file = "mysql.log";
 SET GLOBAL general_log = 'ON';
 
 tail -f /var/lib/mysql/mysql.log
+
+
+6:Optimize Your Tomcat Installation on Ubuntu 14.04
+
+hange JVM Heap Setting (-Xms -Xmx) of Tomcat – Configure setenv.sh file 
+
+default no setenv.sh file under /bin directory. Have to create one with below parameters.
+
+Xms=Xmx=1/2RAM( avoid having the costly memory allocation process running because the size of the allocated memory will be constant all the time)
+MaxPermSize=1/2mx
+
+$cat setenv.sh
+export CATALINA_OPTS="$CATALINA_OPTS -Xms512m"
+export CATALINA_OPTS="$CATALINA_OPTS -Xmx8192m"
+export CATALINA_OPTS="$CATALINA_OPTS -XX:MaxPermSize=256m"
+
+catalina.out to verify the setting in effect
+4-Mar-2017 07:53:06.374 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+14-Mar-2017 07:53:06.375 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+14-Mar-2017 07:53:06.375 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+14-Mar-2017 07:53:06.375 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xms4192m
+14-Mar-2017 07:53:06.375 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xmx4192m
+14-Mar-2017 07:53:06.375 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:MaxPermSize=2000m
