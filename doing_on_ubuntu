@@ -96,3 +96,38 @@ query_cache_size = 0
 innodb_log_file_size = 5242880
 innodb_flush_log_at_trx_commit = 1 # may change to 2 or 0
 innodb_flush_method = O_DIRECT
+
+
+
+8  tomcat upstat on ubuntu14.04
+/etc/init/tomcat.conf
+description "Tomcat Server"
+
+  start on runlevel [2345]
+  stop on runlevel [!2345]
+  respawn
+  respawn limit 10 5
+
+  setuid tomcat
+  setgid tomcat
+
+  env JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/jre
+  env CATALINA_HOME=/opt/tomcat
+
+  # Modify these options as needed
+  env JAVA_OPTS="-Djava.awt.headless=true -Djava.security.egd=file:/dev/./urandom"
+  env CATALINA_OPTS="-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
+
+  exec $CATALINA_HOME/bin/catalina.sh run
+
+  # cleanup temp directory after stop
+  post-stop script
+    rm -rf $CATALINA_HOME/temp/*
+  end script
+  
+  sudo initctl reload-configuration
+Tomcat is ready to be run. Start it with this command:
+sudo initctl start tomcat
+
+
+sudo sh -c 'echo manual >> /etc/init/tomcat.override'
