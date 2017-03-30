@@ -131,3 +131,12 @@ sudo initctl start tomcat
 
 
 sudo sh -c 'echo manual >> /etc/init/tomcat.override'
+
+
+9: deploy web app as the root context in tomcat
+   in the $CATALINA_BASE/conf/[enginename]/[hostname]/ROOT.XML
+   <?xml version="1.0" encoding="UTF-8"?>
+   <Context
+      docBase="/opt/WebRoot"
+      path=""    
+   />
