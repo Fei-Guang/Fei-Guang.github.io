@@ -140,3 +140,17 @@ sudo sh -c 'echo manual >> /etc/init/tomcat.override'
       docBase="/opt/WebRoot"
       path=""    
    />
+
+
+10: authbind tomcat
+sudo apt install authbind
+sudo touch /etc/authbind/byport/{443,80}
+sudo chmod 500 /etc/authbind/byport/{443,80}
+sudo chown tomcat:tomcat /etc/authbind/byport/{443,80}
+# Configure Tomcat
+sudo sed -i 's/8080/80/g' /home/tomcat/apache-tomcat-8.0.35/conf/server.xml
+sudo sed -i 's/8443/443/g' /home/tomcat/apache-tomcat-8.0.35/conf/server.xml
+#TOMCAT_HOME/bin/setenv.sh
+CATALINA_OPTS="-Djava.net.preferIPv4Stack=true"
+#startup.sh:
+exec authbind --deep "$PRGDIR"/"$EXECUTABLE" start "$@"
