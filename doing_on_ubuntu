@@ -156,9 +156,19 @@ export CATALINA_OPTS="-Djava.net.preferIPv4Stack=true"
 exec authbind --deep "$PRGDIR"/"$EXECUTABLE" start "$@"
 
 11:  upload big files with Nginx (Reverse proxy+SSL negotiation) and Tomcat
+solution 1: config nginx
+$TOMCAT_HOME/bin/server.xml  
+disableUploadTimeout=false
 In nginx.conf add:
-
 http {
      # at the END of this segment!
      client_max_body_size 1000m;
 }
+
+solution 2 : config tomcat
+maxSwallowSize	     The maximum number of request body bytes (excluding transfer encoding overhead) that will be 
+                     swallowed by Tomcat for an aborted upload. An aborted upload is when Tomcat knows that
+		     the request body is going to be ignored but the client still sends it.
+		     If Tomcat does not swallow the body the client is unlikely to see the response. 
+		     If not specified the default of 2097152 (2 megabytes) will be used. 
+		     A value of less than zero indicates that no limit should be enforced.
