@@ -154,3 +154,11 @@ sudo sed -i 's/8443/443/g' /home/tomcat/apache-tomcat-8.0.35/conf/server.xml
 export CATALINA_OPTS="-Djava.net.preferIPv4Stack=true"
 #startup.sh:
 exec authbind --deep "$PRGDIR"/"$EXECUTABLE" start "$@"
+
+11:  upload big files with Nginx (Reverse proxy+SSL negotiation) and Tomcat
+In nginx.conf add:
+
+http {
+     # at the END of this segment!
+     client_max_body_size 1000m;
+}
