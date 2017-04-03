@@ -172,3 +172,7 @@ maxSwallowSize	     The maximum number of request body bytes (excluding transfer
 		     If Tomcat does not swallow the body the client is unlikely to see the response. 
 		     If not specified the default of 2097152 (2 megabytes) will be used. 
 		     A value of less than zero indicates that no limit should be enforced.
+		     
+11: MySql - changing innodb_file_per_table for a live db
+solution 1:
+mysql>set global innodb_file_per_table = 1
