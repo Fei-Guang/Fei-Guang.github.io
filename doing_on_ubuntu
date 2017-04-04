@@ -175,4 +175,4 @@ maxSwallowSize	     The maximum number of request body bytes (excluding transfer
 		     
 11: MySql - changing innodb_file_per_table for a live db
 solution 1:
-mysql>set global innodb_file_per_table = 1
+mysql>set global innodb_file_per_table = 1 (set value to on doesn't effect for mysql 5.5 )
