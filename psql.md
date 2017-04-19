@@ -58,3 +58,11 @@ $cayley load --config=cayley.cfg --quads=data/testdata.nq
 
 ```
 
+```
+Cayley looks in the following locations for the configuration file
+
+Command line flag
+The environment variable $CAYLEY_CFG
+/etc/cayley.cfg
+```
+
