@@ -44,7 +44,7 @@ sudo /etc/init.d/postgresql reload
 ```
 cayley_v0.6.1_linux_amd64$ cat cayley.cfg
 {
-"host": "0.0.0.0",
+"listen_host": "0.0.0.0",
 "database": "sql",
 "db_path": "postgres://postgres:psql@db/cayley?sslmode=disable",
 "read_only": false
