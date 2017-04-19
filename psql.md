@@ -38,3 +38,24 @@ local   all             postgres                                md5
 Now you should reload the server configuration changes and connect pgAdmin III to your PostgreSQL database server.
 
 sudo /etc/init.d/postgresql reload
+
+
+cayley_v0.6.1_linux_amd64$ cat cayley.cfg
+{
+"host": "0.0.0.0",
+"database": "sql",
+"db_path": "postgres://postgres:psql@db/cayley?sslmode=disable",
+"read_only": false
+}
+
+```
+$cayley init --config=cayley.cfg
+$cayley http --config=cayley.cfg
+$cayley load --config=cayley.cfg --quads=data/testdata.nq
+
+
+```
+
+
+
+./cayley load --config=cayley.cfg --quads=data/testdata.nq
