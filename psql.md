@@ -26,6 +26,8 @@ To create the first database, which we will call "mydb", simply type:
  
 #sudo nano /etc/postgresql/9.3/main/pg_hba.conf
 and change the line 
+host    all             all             0.0.0.0/0    md5
+
 
 # Database administrative login by Unix domain socket
 local   all             postgres                                peer
