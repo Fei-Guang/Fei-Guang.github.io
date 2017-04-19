@@ -20,3 +20,19 @@ To create the first database, which we will call "mydb", simply type:
 
 
  sudo -u postgres createdb mydb
+ 
+ 
+ 
+ 
+#sudo nano /etc/postgresql/9.3/main/pg_hba.conf
+and change the line 
+
+# Database administrative login by Unix domain socket
+local   all             postgres                                peer
+to
+
+# Database administrative login by Unix domain socket
+local   all             postgres                                md5
+Now you should reload the server configuration changes and connect pgAdmin III to your PostgreSQL database server.
+
+sudo /etc/init.d/postgresql reload
