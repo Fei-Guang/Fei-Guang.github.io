@@ -40,6 +40,8 @@ Now you should reload the server configuration changes and connect pgAdmin III t
 sudo /etc/init.d/postgresql reload
 
 
+
+```
 cayley_v0.6.1_linux_amd64$ cat cayley.cfg
 {
 "host": "0.0.0.0",
@@ -48,7 +50,7 @@ cayley_v0.6.1_linux_amd64$ cat cayley.cfg
 "read_only": false
 }
 
-```
+
 $cayley init --config=cayley.cfg
 $cayley http --config=cayley.cfg
 $cayley load --config=cayley.cfg --quads=data/testdata.nq
@@ -56,6 +58,3 @@ $cayley load --config=cayley.cfg --quads=data/testdata.nq
 
 ```
 
-
-
-./cayley load --config=cayley.cfg --quads=data/testdata.nq
