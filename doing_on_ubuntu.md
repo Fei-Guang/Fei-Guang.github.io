@@ -178,7 +178,8 @@ solution 1:
 mysql>set global innodb_file_per_table = 1 (set value to on doesn't effect for mysql 5.5 )
 
 12:Cross Origin Resource Sharing (CORS) with nginx
- location / {
+
+     location / {
                 # First attempt to serve request as file, then
                 # as directory, then fall back to displaying a 404.
                 # try_files $uri $uri/ =404;
