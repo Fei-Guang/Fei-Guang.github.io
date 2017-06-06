@@ -191,6 +191,7 @@ mysql>set global innodb_file_per_table = 1 (set value to on doesn't effect for m
 
 
 13: remove Nginx Server Signature(reset server header in response)
+
     /etc/nginx/nginx.conf
     server_tokens off;
  
