@@ -188,3 +188,9 @@ mysql>set global innodb_file_per_table = 1 (set value to on doesn't effect for m
                 add_header 'Access-Control-Allow-Origin' '*';
                 add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS, PUT, DELETE';
 
+
+
+13: remove Nginx Server Signature(reset server header in response)
+    /etc/nginx/nginx.conf
+    server_tokens off;
+ 
