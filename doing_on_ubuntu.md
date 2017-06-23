@@ -5,7 +5,7 @@ $ export TZ=:/etc/localtime
 1: set TZ=:/etc/localtime
                 https://blog.packagecloud.io/eng/2017/02/21/set-environment-variable-save-thousands-of-system-calls/
                 
-2: mysql etf8 
+2: mysql utf8 
 
 For the recent version of MySQL,
 
