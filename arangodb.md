@@ -22,3 +22,13 @@ db.createDatabase('mydb', function (err) {
 Keep in mind that the new database you’ve created is only available once the callback is called or the promise is resolved.
 Throughout this tutorial we’ll use the promise API because they’re available in recent versions of Node.js as well as most modern browsers.
 
+
+ 3:
+ db = require('arangojs').Database;
+ db = new Database('http://127.0.0.1:8529'); 
+ db.useBasicAuth('root', '123123');
+ db.createDatabase('mydb').then(
+  () => console.log('Database created'),
+  err => console.error('Failed to create database:', err)
+);
+
