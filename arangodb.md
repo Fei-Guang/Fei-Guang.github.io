@@ -32,3 +32,7 @@ Throughout this tutorial we’ll use the promise API because they’re available
   err => console.error('Failed to create database:', err)
 );
 
+
+
+/etc/init.d/arangodb3 status
+
