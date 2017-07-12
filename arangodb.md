@@ -34,5 +34,6 @@ Throughout this tutorial we’ll use the promise API because they’re available
 
 
 
+# check arangodb status  
 /etc/init.d/arangodb3 status
 
