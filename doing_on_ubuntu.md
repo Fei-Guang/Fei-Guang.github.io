@@ -194,4 +194,26 @@ mysql>set global innodb_file_per_table = 1 (set value to on doesn't effect for m
 
     /etc/nginx/nginx.conf
     server_tokens off;
+    
+ # 跨域的常见解决方法
+   目前来讲没有不依靠服务器端来跨域请求资源的技术
+　　1.jsonp 需要目标服务器配合一个callback函数。
+　　2.window.name+iframe 需要目标服务器响应window.name。
+　　3.window.location.hash+iframe 同样需要目标服务器作处理。
+　　4.html5的 postMessage+ifrme 这个也是需要目标服务器或者说是目标页面写一个postMessage，主要侧重于前端通讯。
+　　5.CORS 需要服务器设置header ：Access-Control-Allow-Origin。
+　　6.nginx反向代理 这个方法一般很少有人提及，但是他可以不用目标服务器配合，不过需要你搭建一个中转nginx服务器，用于转发请求。   
+    
+    location / {
+            #alias D:\\develop\\project1dir\\appDist\\;  #此文件夹可以是项目打包后的上线代码文件，也可以是第二个项目源代码文件
+            # Frontend Server
+            proxy_pass http://localhost:8002/;  #前端服务器地址，比如gulp+browser-sync开启的服务器，能看到代码实时更新效果
+        }
+
+        location /api/ {
+            rewrite ^/api/(.*)$ /$1 break;  #所有对后端的请求加一个api前缀方便区分，真正访问的时候移除这个前缀
+            # API Server
+            proxy_pass http://serverB.com;  #将真正的请求代理到serverB,即真实的服务器地址，ajax的url为/api/user/1的请求将会访问http://www.serverB.com/user/1
+        }
+
  
