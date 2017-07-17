@@ -38,5 +38,5 @@ IMPORTANT NOTES:
 #Ending slash is important!
 
   location = /.well-known/acme-challenge/ {
-    return 404;
-  }
+      return 404;
+    }
