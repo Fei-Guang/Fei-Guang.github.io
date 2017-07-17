@@ -36,6 +36,7 @@ IMPORTANT NOTES:
 #Hide /acme-challenge subdirectory and return 404 on all requests.
 #It is somewhat more secure than letting Nginx return 403.
 #Ending slash is important!
-location = /.well-known/acme-challenge/ {
+
+  location = /.well-known/acme-challenge/ {
     return 404;
-}
+  }
