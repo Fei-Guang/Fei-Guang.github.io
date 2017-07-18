@@ -14,7 +14,8 @@ IMPORTANT NOTES:
    making regular backups of this folder is ideal
    
    
-# Nginx configuration to enable ACME Challenge support    
+# Nginx configuration to enable ACME Challenge support
+```
    #Rule for legitimate ACME Challenge requests (like /.well-known/acme-challenge/xxxxxxxxx)
    #We use ^~ here, so that we don't check other regexes (for speed-up). We actually MUST cancel
    #other regex checks, because in our other config files have regex rule that denies access to files with dotted names. location ^~ /.well-    known/acme-challenge/ {
@@ -36,7 +37,7 @@ IMPORTANT NOTES:
 #Hide /acme-challenge subdirectory and return 404 on all requests.
 #It is somewhat more secure than letting Nginx return 403.
 #Ending slash is important!
-
+```
   location = /.well-known/acme-challenge/ {
       return 404;
     }
