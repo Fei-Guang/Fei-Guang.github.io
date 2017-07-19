@@ -215,5 +215,12 @@ mysql>set global innodb_file_per_table = 1 (set value to on doesn't effect for m
             # API Server
             proxy_pass http://serverB.com;  #将真正的请求代理到serverB,即真实的服务器地址，ajax的url为/api/user/1的请求将会访问http://www.serverB.com/user/1
         }
+	
+#  update time
+	
+	sudo ntpdate ntp.ubuntu.com
+	
+	
+	
 
  
