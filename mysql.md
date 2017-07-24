@@ -102,3 +102,11 @@ alter table t_quoted_billitem4tbq add column  itemType varchar(255) DEFAULT '1' 
 SELECT COUNT(*),t2.email AS '总包邮箱', t1.userID FROM  etender.t_user t2 LEFT JOIN etender.t_supplier t1 ON t1.userID = t2.userID  WHERE  t1.logicDelete !=1 GROUP BY t2.userID ;
 
 
+# Making a Copy of a Database
+```
+$mysqldump -u root -pg1d etender > dump.sql
+$mysqladmin -u root -pg1d create hongq
+$mysql -u root -pg1d hongq < dump.sql 
+```
+
+
