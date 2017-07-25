@@ -42,3 +42,5 @@ IMPORTANT NOTES:
       return 404;
    }    
 ```
+
+# nginx need restart after certbot  renew to avoid sec_error_expired_certificate
