@@ -230,10 +230,10 @@ mysql>set global innodb_file_per_table = 1 (set value to on doesn't effect for m
         }
 	
 #  update time
-	
+```	
 	sudo ntpdate ntp.ubuntu.com
-	
-	
+```	
+        https://help.ubuntu.com/lts/serverguide/NTP.html	
 	
 
  
