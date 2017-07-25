@@ -1,11 +1,17 @@
+# TZ
 ```sh
 $ export TZ=:/etc/localtime
+
+locale 
+ /etc/environment:
+LC_ALL=en_US.UTF-8
+LANG=en_US.UTF-8
 ```
 
 1: set TZ=:/etc/localtime
                 https://blog.packagecloud.io/eng/2017/02/21/set-environment-variable-save-thousands-of-system-calls/
                 
-2: mysql utf8 
+# mysql utf8 
 
 For the recent version of MySQL,
 
@@ -25,18 +31,22 @@ For making sure, your MySQL is UTF-8, run the following queries in your MySQL pr
 First query:
 
  mysql> show variables like 'char%';
+
+# tomcat deploy for dev
+```
+conf/Catalina/localhost/ROOT.xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Context
+  docBase="/opt/etender"
+  path=""
+/>
  
  
- 3: locale 
- /etc/environment:
-LC_ALL=en_US.UTF-8
-LANG=en_US.UTF-8
-
-
-4:tomcat deploy for dev
+ 
 
 $TOMCAT_HOME/conf/server.xml
-<!--   
+       <!--   
 	    <Context path="/etender" docBase="c:/WebRoot">
         </Context>
         -->
@@ -44,9 +54,12 @@ $TOMCAT_HOME/conf/server.xml
     </Engine>
   </Service>
 </Server>
+```
 
 
-5:show the last queries executed on MySQL temporarily
+
+
+# show the last queries executed on MySQL temporarily
 
 If you prefer to output to a file:
 
@@ -58,7 +71,7 @@ SET GLOBAL general_log = 'ON';
 tail -f /var/lib/mysql/mysql.log
 
 
-6:Optimize Your Tomcat Installation on Ubuntu 14.04
+# Optimize Your Tomcat Installation on Ubuntu 14.04
 
 hange JVM Heap Setting (-Xms -Xmx) of Tomcat – Configure setenv.sh file 
 
@@ -81,7 +94,7 @@ org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xm
 org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xmx4192m
 org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:MaxPermSize=2000m
 
-7:optimize mysql
+# optimize mysql
 
 showing current configuration variables
 mysql>SHOW VARIABLES LIKE '%max%';  
@@ -99,7 +112,7 @@ innodb_flush_method = O_DIRECT
 
 
 
-8  tomcat upstat on ubuntu14.04
+# tomcat upstat on ubuntu14.04
 /etc/init/tomcat.conf
 description "Tomcat Server"
 
@@ -133,7 +146,7 @@ sudo initctl start tomcat
 sudo sh -c 'echo manual >> /etc/init/tomcat.override'
 
 
-9: deploy web app as the root context in tomcat
+# deploy web app as the root context in tomcat
    in the $CATALINA_BASE/conf/[enginename]/[hostname]/ROOT.XML
    <?xml version="1.0" encoding="UTF-8"?>
    <Context
@@ -142,7 +155,7 @@ sudo sh -c 'echo manual >> /etc/init/tomcat.override'
    />
 
 
-10: authbind tomcat
+# authbind tomcat
 sudo apt install authbind
 sudo touch /etc/authbind/byport/{443,80}
 sudo chmod 500 /etc/authbind/byport/{443,80}
@@ -155,7 +168,7 @@ export CATALINA_OPTS="-Djava.net.preferIPv4Stack=true"
 #startup.sh:
 exec authbind --deep "$PRGDIR"/"$EXECUTABLE" start "$@"
 
-11:  upload big files with Nginx (Reverse proxy+SSL negotiation) and Tomcat
+#  upload big files with Nginx (Reverse proxy+SSL negotiation) and Tomcat
 solution 1: config nginx
 $TOMCAT_HOME/bin/server.xml  
 disableUploadTimeout=false
@@ -173,11 +186,11 @@ maxSwallowSize	     The maximum number of request body bytes (excluding transfer
 		     If not specified the default of 2097152 (2 megabytes) will be used. 
 		     A value of less than zero indicates that no limit should be enforced.
 		     
-11: MySql - changing innodb_file_per_table for a live db
+# MySql - changing innodb_file_per_table for a live db
 solution 1:
 mysql>set global innodb_file_per_table = 1 (set value to on doesn't effect for mysql 5.5 )
 
-12:Cross Origin Resource Sharing (CORS) with nginx
+# Cross Origin Resource Sharing (CORS) with nginx
 
      location / {
                 # First attempt to serve request as file, then
@@ -190,7 +203,7 @@ mysql>set global innodb_file_per_table = 1 (set value to on doesn't effect for m
 
 
 
-13: remove Nginx Server Signature(reset server header in response)
+# remove Nginx Server Signature(reset server header in response)
 
     /etc/nginx/nginx.conf
     server_tokens off;
