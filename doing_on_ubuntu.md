@@ -62,14 +62,14 @@ $TOMCAT_HOME/conf/server.xml
 # show the last queries executed on MySQL temporarily
 
 If you prefer to output to a file:
-
+```
 SET GLOBAL log_output = "FILE"; which is set by default.
 #set absolute path will report error,mysql.log=/var/lib/mysql/mysql.log
 SET GLOBAL general_log_file = "mysql.log";
 SET GLOBAL general_log = 'ON';
 
 tail -f /var/lib/mysql/mysql.log
-
+```
 
 # Optimize Your Tomcat Installation on Ubuntu 14.04
 
