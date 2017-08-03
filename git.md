@@ -16,5 +16,11 @@ git push -u origin <branch>
 git add -i. Type a (for "add untracked"), then * (for "all"), then q (to quit)
 
 
+# discard all Changes not staged for commit
+git checkout -- .
+
+
+
+
 
 
