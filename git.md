@@ -11,6 +11,10 @@ git checkout -b <branch>  | git branch <branch>
 git push -u origin <branch>
 ```
 
+# Adding Only Untracked Files
+
+git add -i. Type a (for "add untracked"), then * (for "all"), then q (to quit)
+
 
 
 
