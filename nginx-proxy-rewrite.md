@@ -16,7 +16,7 @@ users --> nginx --|--- host/blog ---> node.js on localhost:8181
 To route /, you need to edit your nginx config file.
 
 In the config file, find the server section:
-
+```
 server {
     listen       80;
     ...
@@ -25,6 +25,7 @@ server {
     }
     ...
 }
+```
 This section is simply telling nginx how it should serve HTTP requests.
 
 Now, change the location section to this snippet:
