@@ -29,7 +29,7 @@ server {
 This section is simply telling nginx how it should serve HTTP requests.
 
 Now, change the location section to this snippet:
-
+```
 server {
     listen       ...;
     ...
@@ -38,6 +38,7 @@ server {
     }
     ...
 }
+```
 proxy_pass simply tells nginx to forward requests to / to the server listening on http://127.0.0.1:8080.
 
 Step 4 -- Reload nginx's Configuration
@@ -49,7 +50,7 @@ Referesh your browser. Do you see the output from your node.js application? If y
 Step 5 -- Add /blog and /mail
 
 To redirect /mail and /blog, you simply need to add new entries the location section in the config file:
-
+```
 server {
     listen       ...;
     ...
@@ -66,6 +67,8 @@ server {
     }
     ...
 }
+```
+
 Step 6 -- Reload Your nginx Configuration
 
 Run nginx -s reload on your machine.
@@ -83,7 +86,7 @@ Now as you might have noticed in Step 6, nginx sends the same HTTP request to yo
 To fix this issue, we need rewrite the URL so that it matches the URL you can serve on your node.js applications.
 
 To correctly rewrite URLs change your config file to match the following snippet:
-
+```
 server {
     listen       ...;
     ...
@@ -102,6 +105,8 @@ server {
     }
     ...
 }
+```
+
 This rewrite commands are simple regular expressions that transform strings like /blogWHAT_EVER and /mailWHAT_EVER to /WHAT_EVER in the HTTP requests.
 
 Step 8 -- Reload and Test.
@@ -122,7 +127,7 @@ Note: Since you don't have access to a DNS server, you should add domain name en
 127.0.0.1 example1.com example2.com example3.com
 ...
 To proxy eaxmple1.com we can't use the location part of the default server. Instead we need to add another server section with a server_name set to our virtual host (e.g., example1.com, ...), and then a simple location section that tells nginx how to proxy the requests:
-
+```
 server {
     listen       80;
     server_name  example1.com;
@@ -149,3 +154,4 @@ server {
         proxy_pass http://127.0.0.1:8282;
     }
 }
+```
