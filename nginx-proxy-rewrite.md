@@ -5,11 +5,14 @@ Step 3 -- Configure /
 
 Let say we want to configure nginx to route requests for /, /blog, and /mail, respectively onto localhost:8080, localhost:8181, and localhost:8282.
 
+```
+
                   +--- host --------> node.js on localhost:8080
                   |
 users --> nginx --|--- host/blog ---> node.js on localhost:8181
                   |
                   +--- host/mail ---> node.js on localhost:8282
+```
 To route /, you need to edit your nginx config file.
 
 In the config file, find the server section:
