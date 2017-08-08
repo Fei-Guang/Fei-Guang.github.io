@@ -16,8 +16,17 @@ git push -u origin <branch>
 git add -i. Type a (for "add untracked"), then * (for "all"), then q (to quit)
 
 
-# discard all Changes not staged for commit
+# Discard all Changes not staged for commit
 git checkout -- .
+
+# Create a new empty branch and import from svn
+
+git checkout --orphan <branchname>
+git rm --cached -r .
+svn checkout 
+git add .
+git commit -m "backup from svn tag"
+git push --set-upstream origin <branchname>
 
 
 
