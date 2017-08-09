@@ -1,8 +1,9 @@
-mysql command for showing current configuration variables
-mysql>SHOW VARIABLES;
+# showing current configuration
+
+    mysql>SHOW VARIABLES;
  
-mysqldump -u root -h 192.168.76.62 -pgld --all-databases > dump.sql
-mysqldump -u root -h db -pgld --all-databases > dump.sql
+    mysqldump -u root -h 192.168.76.62 -pgld --all-databases > dump.sql
+    mysqldump -u root -h db -pgld --all-databases > dump.sql
 
 
 then import data in mysql shell
