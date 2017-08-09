@@ -10,4 +10,12 @@ Authors of services which use the HTTP protocol SHOULD NOT use GET based forms f
 
 Finally, an important consideration when using GET for AJAX requests is that some browsers - IE in particular - will cache the results of a GET request. So if you, for example, poll using the same GET request you will always get back the same results, even if the data you are querying is being updated server-side. One way to alleviate this problem is to make the URL unique for each request by appending a timestamp.
 
+Restrictions on form data length	Yes, since form data is in the URL and URL length is restricted. A safe URL length limit is often 2048 characters but varies by browser and web server.
+
+From the Dropbox developer blog:
+
+    a browser doesn’t know exactly what a particular HTML form does, but if the form is submitted via HTTP GET, the browser knows it’s safe to     automatically retry the submission if there’s a network error. For forms that use HTTP POST, it may not be safe to retry so the browser         asks the user for confirmation first.
+
+A "GET" request is often cacheable, whereas a "POST" request can hardly be. For query systems this may have a considerable efficiency impact, especially if the query strings are simple, since caches might serve the most frequent queries.
+
 http://www.diffen.com/difference/GET-vs-POST-HTTP-Requests
