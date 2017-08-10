@@ -24,5 +24,10 @@ trusted_hosts[] = "192.168.79.4"
 trusted_hosts[] = "<public-domain-server>"
 ```
 
+# Configure GeoIP (PECL) With Piwik
 
+check php version 
+    curl http://localhost/info.php
+PHP Version 7.0.17
+    sudo apt-get install php-geoip php-dev libgeoip-dev
 
