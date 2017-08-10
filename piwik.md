@@ -62,5 +62,13 @@ Open your browser and login into your Piwik page, go to settings, Geolocation, a
 Updating Previous Visits and Updating the GeoIP Database
  sudo apt-get install php-mysql
  sudo php /use/share/nginx/html/piwik/console usercountry:attribute 2017-01-01,2017-08-10
+```
 
+```
+nginx
+
+http {
+
+        geoip_country  /usr/share/nginx/html/piwik/misc/GeoIP.dat;
+        geoip_city    /usr/share/nginx/html/piwik/misc/GeoIPCity.dat;
 ```
