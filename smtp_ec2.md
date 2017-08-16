@@ -10,3 +10,4 @@ goto : https://accounts.google.com/DisplayUnlockCaptcha
 
 and click continue this going to allow access from other servers.
 
+https://www.mkyong.com/java/javamail-api-sending-email-via-gmail-smtp-example/
