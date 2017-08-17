@@ -29,6 +29,13 @@ git commit -m "backup from svn tag"
 git push --set-upstream origin <branchname>
 ```
 
+# save username and password in git
+```
+git config credential.helper store
+then
+git pull
+```
+~/.git-credentials
 
 
 
