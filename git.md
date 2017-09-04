@@ -38,5 +38,15 @@ git pull
 ~/.git-credentials
 
 
+# I delete a Git branch both locally and remotely
+Executive Summary
+$ git push -d origin <branch_name>
+$ git branch -d <branch_name>
+Delete Local Branch
+To delete the local branch use:
 
-
+$ git branch -d branch_name
+or use:
+$ git branch -D branch_name
+As of Git v1.7.0, you can delete a remote branch using
+$ git push origin --delete <branch_name>
