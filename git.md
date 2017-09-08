@@ -53,11 +53,11 @@ $ git push origin --delete <branch_name>
 
 
 # git without proxy
-
-glodon@web:~/workspace/git/etender$ env|grep proxy
+```
+$ env|grep proxy
 http_proxy=http://192.168.0.119:3128/
 socks_proxy=socks://192.168.0.119:3128/
 https_proxy=https://192.168.0.119:3128/
-glodon@web:~/workspace/git/etender$ unset http_proxy
-glodon@web:~/workspace/git/etender$ git pull
-
+$ unset http_proxy
+$ git pull
+```
