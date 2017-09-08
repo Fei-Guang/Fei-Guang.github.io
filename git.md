@@ -50,3 +50,14 @@ or use:
 $ git branch -D branch_name
 As of Git v1.7.0, you can delete a remote branch using
 $ git push origin --delete <branch_name>
+
+
+# git without proxy
+
+glodon@web:~/workspace/git/etender$ env|grep proxy
+http_proxy=http://192.168.0.119:3128/
+socks_proxy=socks://192.168.0.119:3128/
+https_proxy=https://192.168.0.119:3128/
+glodon@web:~/workspace/git/etender$ unset http_proxy
+glodon@web:~/workspace/git/etender$ git pull
+
