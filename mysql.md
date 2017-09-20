@@ -111,3 +111,9 @@ $mysql -u root -pg1d hongq < dump.sql
 ```
 
 
+# export to csv
+```
+SELECT b.email,a.name supplierName,a.email supplierEmail,a.telephone,a.trade,a.level,a.address,a.contacts FROM t_supplier a LEFT JOIN t_user b ON a.userID = b.userid and a.logicDelete !=1  ORDER BY a.userID limit 1000,1000 INTO OUTFILE '/var/lib/mysql-files/subcon1000.csv' FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+```
