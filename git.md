@@ -62,4 +62,4 @@ $ unset http_proxy
 $ git pull
 ```
 
-[https://www.andrewpage.me/tracking-down-bugs-with-git-bisect/]https://www.andrewpage.me/tracking-down-bugs-with-git-bisect/
+https://www.andrewpage.me/tracking-down-bugs-with-git-bisect/
