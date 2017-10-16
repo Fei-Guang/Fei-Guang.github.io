@@ -22,3 +22,8 @@ Use the method provided by your DNS service provider to add a CNAME resource rec
 Important
 If you already have an existing CNAME record for your domain name, update that resource record set or replace it with a new one that points to the CloudFront domain name for your distribution.
 In addition, confirm that your CNAME resource record set points to your distribution's domain name and not to one of your origin servers.
+
+
+# 2 steps to add cname record
+step 1: add a Alternate Domain Name for cloudfront
+step 2: add a CNAME resource record set by the DNS service provider
