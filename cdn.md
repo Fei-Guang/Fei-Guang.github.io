@@ -26,5 +26,5 @@ In addition, confirm that your CNAME resource record set points to your distribu
 
 # 2 steps to add cname record
 
-step 1: add a Alternate Domain Name for cloudfront  
+step 1: edit cloudfront distribution then add a Alternate Domain Name for cloudfront  
 step 2: add a CNAME resource record set by the DNS service provider
