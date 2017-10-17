@@ -63,3 +63,5 @@ $ git pull
 ```
 
 https://www.andrewpage.me/tracking-down-bugs-with-git-bisect/
+https://medium.com/@fredrikmorken/why-you-should-stop-using-git-rebase-5552bee4fed1
+
