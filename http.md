@@ -24,6 +24,14 @@ A "GET" request is often cacheable, whereas a "POST" request can hardly be. For 
 
 http://www.diffen.com/difference/GET-vs-POST-HTTP-Requests
 
-# Clearing catalina.out without restarting Tomcat
+# rotate catalina out without restarting tomcat
+
+The catalina.out file is created by a shell redirection, ex ">> catalina.out 2>&1".  This catches anything written to System.out and System.err and places it into the catalina.out file. 
+Given this, a good way to rotate catalina.out is to alter the script to pipe the output to a log rotation script rather than directly to a file.  This will allow you to rotate the logs without restarting Tomcat and without copying the entire contents of the log to another file.
+It's a pretty simple change to catalina.sh and it is described at this link.
+
+    http://marc.info/?l=tomcat-user&m=105640876032532&w=2
+    https://dzone.com/articles/how-rotate-tomcat-catalinaout
+    
 
     cat /dev/null > logs/catalina.out
