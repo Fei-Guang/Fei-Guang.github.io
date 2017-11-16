@@ -23,3 +23,7 @@ From the Dropbox developer blog:
 A "GET" request is often cacheable, whereas a "POST" request can hardly be. For query systems this may have a considerable efficiency impact, especially if the query strings are simple, since caches might serve the most frequent queries.
 
 http://www.diffen.com/difference/GET-vs-POST-HTTP-Requests
+
+# Clearing catalina.out without restarting Tomcat
+
+    cat /dev/null > logs/catalina.out
