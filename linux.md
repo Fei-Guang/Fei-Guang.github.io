@@ -22,3 +22,10 @@ As per the SSL section above, admin.url can be used to specify a different proto
 "admin": { 
   "url": "http://example.com" 
 }
+
+
+```
+ubuntu@ip-192-168-114-240:/lib/systemd/system$ sudo systemctl disable ghost_54-169-190-39.service
+Removed symlink /etc/systemd/system/multi-user.target.wants/ghost_54-169-190-39.service.
+Removed symlink /etc/systemd/system/ghost_54-169-190-39.service.
+```
