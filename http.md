@@ -47,3 +47,8 @@ It's a pretty simple change to catalina.sh and it is described at this link.
         acceptorThreadCount="2" compressableMimeType="text/html,text/xml,text/plain,text/css,text/javascript,application/javascript"
         URIEncoding="utf-8"/>
 ```
+
+A CharacterEncodingFilter sets the body encoding, but not the URI encoding.
+Need to set URIEncoding="UTF-8" as an attribute in all the connectors in Tomcat server.xml
+
+The request.setCharacterEncoding("UTF-8"); only sets the encoding of the request body (which is been used by POST requests), not the encoding of the request URI (which is been used by GET requests).
