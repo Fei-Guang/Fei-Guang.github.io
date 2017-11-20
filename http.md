@@ -35,3 +35,15 @@ It's a pretty simple change to catalina.sh and it is described at this link.
     
 
     cat /dev/null > logs/catalina.out
+
+
+# tomcat connector config
+
+```
+ <Connector address="127.0.0.1" port="8080" protocol="org.apache.coyote.http11.Http11Nio2Protocol"
+        connectionTimeout="30000" redirectPort="8443" executor="tomcatThreadPool" minProcessors="100" maxProcessors="300"
+        enableLookups="false" acceptCount="500" maxPostSize="-1"
+        disableUploadTimeout="false" connectionUploadTimeout="600000"   compression="on" compressionMinSize="2048" noCompressionUserAgents="gozilla, traviata"
+        acceptorThreadCount="2" compressableMimeType="text/html,text/xml,text/plain,text/css,text/javascript,application/javascript"
+        URIEncoding="utf-8"/>
+```
