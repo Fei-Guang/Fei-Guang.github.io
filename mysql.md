@@ -117,3 +117,5 @@ SELECT b.email,a.name supplierName,a.email supplierEmail,a.telephone,a.trade,a.l
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 ```
+# Creating SSH Tunnel From Linux for mysql
+$ ssh -L 3306:rdb:3306 ubuntu@ec2
