@@ -42,9 +42,9 @@ extension=geoip.so
 
 [gd]
 ;AFTER THE gd SECTION NOT BEFORE
-geoip.custom_directory=/use/share/nginx/html/piwik/misc
+geoip.custom_directory=/usr/share/nginx/html/piwik/misc
 
-cd /use/share/nginx/html/piwik/misc
+cd /usr/share/nginx/html/piwik/misc
 sudo wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
 sudo gunzip GeoLiteCity.dat.gz
 
@@ -61,7 +61,7 @@ Open your browser and login into your Piwik page, go to settings, Geolocation, a
 
 Updating Previous Visits and Updating the GeoIP Database
  sudo apt-get install php-mysql
- sudo php /use/share/nginx/html/piwik/console usercountry:attribute 2017-01-01,2017-08-10
+ sudo php /usr/share/nginx/html/piwik/console usercountry:attribute 2017-01-01,2017-08-10
 ```
 
 ```
