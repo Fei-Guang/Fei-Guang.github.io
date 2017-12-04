@@ -1,3 +1,7 @@
+# NGINX 1.12 ON UBUNTU 16
+[https://launchpad.net/~nginx/+archive/ubuntu/stable](https://launchpad.net/~nginx/+archive/ubuntu/stable)
+
+
 
 [nginxproxy.md](https://gist.github.com/soheilhy/8b94347ff8336d971ad0)
 
