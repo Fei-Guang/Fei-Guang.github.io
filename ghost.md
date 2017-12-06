@@ -1,3 +1,13 @@
+# Adding swap memory
+If your system has less than 1GB memory, you may run into errors. To overcome this, configure a larger amount of swap memory:
+
+```
+dd if=/dev/zero of=/var/swap bs=1k count=1024k
+mkswap /var/swap
+swapon /var/swap
+echo '/var/swap swap swap default 0 0' >> /etc/fstab
+```
+
 # default-setting
 
     /var/www/ghost/versions/1.18.2/core/server/data/schema/default-settings.json
