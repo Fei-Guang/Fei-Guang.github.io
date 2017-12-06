@@ -29,3 +29,7 @@ ubuntu@ip-192-168-114-240:/lib/systemd/system$ sudo systemctl disable ghost_54-1
 Removed symlink /etc/systemd/system/multi-user.target.wants/ghost_54-169-190-39.service.
 Removed symlink /etc/systemd/system/ghost_54-169-190-39.service.
 ```
+
+# Rotate Tomcat catalina.out
+
+https://dzone.com/articles/how-rotate-tomcat-catalinaout
