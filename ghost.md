@@ -36,3 +36,7 @@ mail: {
 
 Amazon SES credential can be generated from amazon control panel.
 From address must be registered and verified as sender.
+
+# favicon.ico
+
+    cp /home/ubuntu/favicon.ico /var/www/ghost/versions/1.18.2/core/server/public/
