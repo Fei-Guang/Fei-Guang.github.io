@@ -53,6 +53,7 @@ $ git push origin --delete <branch_name>
 
 
 # git without proxy
+*method 1*
 ```
 $ env|grep proxy
 http_proxy=http://192.168.0.119:3128/
@@ -60,6 +61,19 @@ socks_proxy=socks://192.168.0.119:3128/
 https_proxy=https://192.168.0.119:3128/
 $ unset http_proxy
 $ git pull
+```
+*method 2(proxy for certain git urls/domains)*
+```
+@web:~/workspace/git/pub$ cat .git/config
+[core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+[http]
+    proxy = ""
+[https]
+    proxy = ""
 ```
 
 https://www.andrewpage.me/tracking-down-bugs-with-git-bisect/
