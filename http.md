@@ -56,3 +56,4 @@ The request.setCharacterEncoding("UTF-8"); only sets the encoding of the request
 # enabling gzip with nginx and verifying that it's working
  
 curl -H "Accept-Encoding: gzip,deflate" -I http://web/resource
+[https://www.digitalocean.com/community/tutorials/how-to-add-the-gzip-module-to-nginx-on-ubuntu-16-04]
