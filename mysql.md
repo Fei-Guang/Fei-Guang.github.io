@@ -119,3 +119,6 @@ LINES TERMINATED BY '\n'
 ```
 # Creating SSH Tunnel From Linux for mysql
 $ ssh -L 3306:rdb:3306 ubuntu@ec2
+
+use ip instead of hostname to avoid channel X on ubuntu 16
+ "channel X: open failed: administratively prohibited"
