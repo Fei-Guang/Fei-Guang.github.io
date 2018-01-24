@@ -1,0 +1,29 @@
+# git-changelog-maven-plugin
+```
+<plugin>
+		        <groupId>se.bjurr.gitchangelog</groupId>
+		        <artifactId>git-changelog-maven-plugin</artifactId>
+		        <version>1.50</version>
+		        <executions>
+		          <execution>
+		            <id>GenerateGitChangelog</id>
+		            <phase>generate-sources</phase>
+		            <goals>
+		              <goal>git-changelog</goal>
+		            </goals>
+		            <configuration>
+		              <!-- A file on filesystem //-->
+		              <file>CHANGELOG.md</file>
+		              <toRef>HEAD</toRef>
+		
+		              
+		            </configuration>
+		          </execution>
+		        </executions>
+		      </plugin>
+```    
+
+# mvn compile to create the CHANGELOG.md
+```
+mvn compile
+```
