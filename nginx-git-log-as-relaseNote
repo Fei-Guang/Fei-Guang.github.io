@@ -23,7 +23,24 @@
 		      </plugin>
 ```    
 
+# get a copy of mustache template and save as changelog.mustache under the project home directory
+
+```
+https://github.com/tomasbjerre/git-changelog-lib/tree/master/src/test/resources/templates
+```
+
 # mvn compile to create the CHANGELOG.md
 ```
 mvn compile
 ```
+
+# upload the CHANGELOG.md to nginx as a release not
+
+# config nginx support browser MD 
+```
+mime.types
+
+text/markdown                         md;
+```
+
+# reload nginx and check the release not
