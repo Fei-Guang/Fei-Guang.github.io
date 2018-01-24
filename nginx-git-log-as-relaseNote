@@ -43,4 +43,39 @@ mime.types
 text/markdown                         md;
 ```
 
-# reload nginx and check the release not
+# reload nginx and check the release note as text
+
+
+
+# render Markdown as html
+
+``` 
+use template with StrapDown.js
+
+
+<!DOCTYPE html>
+<html>
+<title>etender release</title>
+
+<xmp theme="united" style="display:none;">
+
+# Etender release note from Git Changelog 
+
+[etender](http://etender.io)
+
+Git Changelog.
+
+{{#commits}}
+## {{authorName}} - {{commitTime}}
+[{{hashFull}}](https://etender.io/{{hash}})
+
+{{{message}}}
+
+{{/commits}}
+
+
+</xmp>
+
+<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+</html>
+```
