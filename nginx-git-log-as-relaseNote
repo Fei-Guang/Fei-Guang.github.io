@@ -47,10 +47,10 @@ text/markdown                         md;
 
 
 
-# render Markdown as html
+# use template with StrapDown.js torender Markdown as html
 
 ``` 
-use template with StrapDown.js
+
 
 
 <!DOCTYPE html>
