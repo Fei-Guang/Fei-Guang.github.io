@@ -12,3 +12,11 @@ port: 6000
 ```
 JEKYLL_ENV=production bundle exec jekyll build
 ```
+
+# replace gem source mirror
+```
+gem sources --remove https://rubygems.org/
+gem sources -a http://ruby.taobao.org/
+gem sources -l
+http://ruby.taobao.org/
+```
