@@ -7,3 +7,8 @@
 $ cat _config.yml
 port: 6000
 ```
+
+# build for production
+```
+JEKYLL_ENV=production bundle exec jekyll build
+```
